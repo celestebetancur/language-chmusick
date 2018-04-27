@@ -1,0 +1,7 @@
+".source.chmusick":
+  editor:
+    increaseIndentPattern: "^.*(\\{[^}\"']*|\\([^)\"']*)$"
+    completions: [
+      "add"
+      "now"
+    ]

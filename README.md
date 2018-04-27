@@ -1,2 +1,3 @@
-# language-chmusick
-Atom package for chmusick library
+# language-chmusick package
+
+CHmUsiCK syntax highlighting for Atom.

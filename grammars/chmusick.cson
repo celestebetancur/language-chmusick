@@ -1,0 +1,145 @@
+'scopeName': 'source.chmusick'
+'name': 'CHmUsiCK'
+'fileTypes': [
+  'ck'
+]
+'patterns': [
+  {
+    'captures':
+      '0':
+        'name': 'punctuation.definition.comment.chmusick'
+    'match': '/\\*\\*/'
+    'name': 'comment.block.empty.chmusick'
+  }
+  {
+    'begin': '/\\*'
+    'captures':
+      '0':
+        'name': 'punctuation.definition.comment.chmusick'
+    'end': '\\*/'
+    'name': 'comment.block.chmusick'
+  }
+  {
+    'begin': '(^[ \\t]+)?(?=//|<\\-\\-)'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.whitespace.comment.leading.chmusick'
+    'end': '(?!\\G)'
+    'patterns': [
+      {
+        'begin': '//|<\\-\\-'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.chmusick'
+        'end': '\\n'
+        'name': 'comment.line.double-slash.chmusick'
+      }
+    ]
+  }
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name':
+          'punctuation.definition.string.begin.chmusick'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name':
+          'punctuation.definition.string.end.chmusick'
+    'name': 'string.quoted.double.chmusick'
+		'patterns': [
+			{
+        'name': 'constant.character.escape.chmusick'
+				'match': '\\\\.'
+			}
+	  ]
+  }
+  {
+    'match': '<<<|>>>'
+    'name': 'support.function.debug.chmusick'
+  }
+  {
+    'match': '\\b(int|float|time|dur|void|same|complex|polar|string)\\b'
+    'name': 'storage.type.chmusick'
+  }
+  {
+    'match': '\\b(if|else|while|until|for|repeat|break|continue|return|switch|do)\\b'
+    'name': 'keyword.control.chmusick'
+  }
+  {
+    'match': '\\b(class|interface)\\b'
+    'name': 'storage.type.class.chmusick'
+  }
+  {
+    'match': '\\b(extends|public|static|pure|implements|protected|private)\\b'
+    'name': 'storage.modifier.class.chmusick'
+  }
+  {
+    'match': '\\b(this|super)\\b'
+    'name': 'variable.language.chmusick'
+  }
+  {
+    'match': '\\b(function|fun|spork|const|new)\\b'
+    'name': 'keyword.control.chmusick'
+  }
+  {
+    'match': '\\b(now|true|false|maybe|null|NULL|me|samp|ms|second|minute|hour' +
+      '|day|week|chout|cherr|dac|adc|blackhole)\\b'
+    'name': 'constant.special.chmusick'
+  }
+  {
+    'match': '\\b(0[xX]\\h(?>_?\\h)*|\\d(?>_?\\d)*(\\.(?![^[:space:][:digit:]])(?>_?\\d)*)?([eE][-+]?\\d(?>_?\\d)*)?|0[bB][01]+|pi)\\b'
+    'name': 'constant.numeric.chmusick'
+  }
+  {
+    'match': '=>|=<|@=>|\\+=>|\\-=>|\\*=>|\\/=>|%=>|\\+\\+|\\+|\\-\\-|\\-|\\*|\\/(?!\\/)|%|==|!=|<=|>=|<<|>>|<|>|&&|\\|\\||&|\\||\\^|\\$|::';
+    'name': 'keyword.operator.chmusick'
+  }
+  {
+    'match': '\\b(UGen|SinOsc|PulseOsc|SqrOsc|TriOsc|SawOsc|Phasor|Noise' +
+      '|Impulse|Step|Gain|SndBuf2?|HalfRect|FullRect|Mix2|Pan2|GenX|CurveTable' +
+      '|WarpTable|LiSa|Envelope|ADSR|Delay|DelayA|DelayL|Echo|JCRev|NRev|PRCRev|Chorus' +
+      '|Modulate|PitShift|SubNoise|Blit|BlitSaw|BlitSquare|WvIn|WaveLoop|WvOut|OneZero' +
+      '|TwoZero|OnePole|TwoPole|PoleZero|BiQuad|Filter|LPF|HPF|BPF|BRF|ResonZ|Dyno' +
+      '|StkInstrument|BandedWG|BlowBotl|BlowHole|Bowed|Brass|Clarinet|Flute|Mandolin' +
+      '|ModalBar|Moog|Saxofony|Shakers|Sitar|StifKarp|VoicForm|FM|BeeThree|FMVoices|HevyMetl' +
+      '|PercFlut|Rhodey|TubeBell|Wurley|UGen_Multi|UGen_Stereo|Chubgraph|Chugen' +
+      '|FilterBasic|FilterStk|LiSa10|Gen5|Gen7|Gen9|Gen10|Gen17|CNoise|BLT)\\b'
+    'name': 'support.class.ugen.chmusick'
+  }
+  {
+    'match': '\\b(UAna|UAnaBlob|Windowing|FFT|IFFT|DCT|IDCT|Centroid|Flux|RMS|RollOff|ZeroX|FeatureCollector|Flip|pilF|AutoCorr|XCorr)\\b'
+    'name': 'support.class.uana.chmusick'
+  }
+  {
+    'match': '\\b(Std|Machine|Math|Shred|RegEx|Object)\\b'
+    'name': 'support.class.library.chmusick'
+  }
+  {
+    'match': '\\b(Event|MidiIn|MidiMsg|OscRecv|OscEvent|Hid|HidMsg|MidiOut|OscOut|OscIn|OscMsg)\\b'
+    'name': 'support.class.event.chmusick'
+  }
+  {
+    'match': '\\b(IO|FileIO|StdOut|StdErr|SerialIO|MidiFileIn|KBHit)\\b'
+    'name': 'support.class.io.chmusick'
+  }
+  {
+    'match': '\\b(ABSaturator|AmbPan3|Bitcrusher|MagicSine|KasFilter|FIR|Pan4' +
+      '|Pan8|Pan16|PitchTrack|GVerb|Mesh2D|Spectacle|Elliptic|WinFuncEnv|PowerADSR' +
+      '|FoldbackSaturator|WPDiodeLadder|WPKorg35|Chmusick|TheCooker|Notes)\\b'
+    'name': 'support.class.chugin.chmusick'
+  }
+  {
+    'match': '(\\.)\\s*([a-zA-Z_$][\\w$]*)'
+    'captures':
+      '2':
+        'name': 'entity.name.function.chmusick'
+  }
+  {
+    'match': '([A-Za-z_$][\\w$]*)\\s*(\\()'
+    'captures':
+      '1':
+        'name': 'entity.name.function.chmusick'
+  }
+]
